@@ -48,11 +48,10 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question getRandomQuestion() {
-        List<Question> list = questions.stream().toList();
+        List<Question> list = questions.stream().collect(Collectors.toList());
         int a = random.nextInt(questions.size());
         return list.get(a);
     }
-
 
 
 }
